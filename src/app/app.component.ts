@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sidebar';
+
+  menuOpened = false;
+
+  setMenuState(state: boolean) {
+    this.menuOpened = state;
+  }
 }
