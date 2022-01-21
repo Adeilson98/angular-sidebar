@@ -1,5 +1,7 @@
 <header>
     <nav [ngClass]="{'active': opened}">
-        <p (click)="toggle()">Clique aqui!</p>
+        <div class="hamburger-menu">
+            <div class="bar" (click)="toggle()" [ngClass]="{'active': opened}"></div>
+        </div>
     </nav>
 </header>

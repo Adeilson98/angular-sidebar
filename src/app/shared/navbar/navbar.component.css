@@ -5,14 +5,55 @@ header nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
-header .active {
-    border-bottom: 2px solid blue;
+nav .hamburger-menu {
+    position: absolute;
+    right: 30px;
 }
 
-nav p {
-    font-family: Arial;
-    font-size: 18px;
+nav .bar {
+    height: 2px;
+    width: 30px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    position: relative;
     cursor: pointer;
+    /* transition: all .4s ease-in-out; */
+}
+
+nav .bar::before {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    content: '';
+    position: absolute;
+    top: -10px;
+}
+
+nav .bar::after {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    content: '';
+    position: absolute;
+    bottom: -10px;
+}
+
+nav .bar.active {
+    background-color: transparent;
+}
+
+nav .bar.active::after {
+    bottom: 0;
+    transform: rotate( -45deg );
+    transition: all .4s ease-in-out
+}
+
+nav .bar.active::before {
+    top: 0;
+    transform: rotate( 45deg );
+    transition: all .4s ease-in-out;
 }
