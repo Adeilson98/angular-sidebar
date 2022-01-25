@@ -8,6 +8,10 @@ header nav {
     position: relative;
 }
 
+nav.active {
+    border-bottom: none;
+}
+
 nav .hamburger-menu {
     position: absolute;
     right: 30px;
@@ -56,4 +60,29 @@ nav .bar.active::before {
     top: 0;
     transform: rotate( 45deg );
     transition: all .4s ease-in-out;
+}
+
+.option {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .4s ease-in-out;
+    position: fixed;
+    transform: translateX(60%);
+}
+
+.option.active {
+    transform: translateX(0%);
+    transition: all .4s ease-in-out;
+}
+
+.option a {
+    margin: 15px 0px;
+    font-size: 40px;
+    text-decoration: none;
+    font-family: Arial;
+    color: black;
 }
